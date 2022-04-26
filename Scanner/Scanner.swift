@@ -249,7 +249,9 @@ fileprivate class ScannerMetadataDelegate: NSObject, ScannerDelegate {
         self.input = try AVCaptureDeviceInput(device: device)
         super.init()
         
-        session.sessionPreset = .high
+        if session.canSetSessionPreset(.high) {
+            session.sessionPreset = .high
+        }
         
         if session.canAddInput(input) {
             session.addInput(input)
@@ -364,7 +366,9 @@ fileprivate class ScannerVisionDelegate: NSObject, ScannerDelegate {
         self.input = try AVCaptureDeviceInput(device: device)
         super.init()
         
-        session.sessionPreset = .high
+        if session.canSetSessionPreset(.high) {
+            session.sessionPreset = .high
+        }
         
         if session.canAddInput(input) {
             session.addInput(input)
