@@ -121,12 +121,12 @@ public extension Scanner {
     
     /// 开始预览
     func start() {
-        delegate.session.startRunning()
+        delegate.start()
     }
     
     /// 结束预览
     func stop() {
-        delegate.session.stopRunning()
+        delegate.stop()
     }
     
     /// 设置预览视频缩放
